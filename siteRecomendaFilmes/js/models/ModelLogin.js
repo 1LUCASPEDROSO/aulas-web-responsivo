@@ -1,10 +1,15 @@
- import { dadosLogin } from "../controllers/controllerLogin";
-    let _firstName = dadosLogin.firstName;
-    let _lastName = dadosLogin.lastName;
-    let _email = dadosLogin.email;
-    let _pasword = dadosLogin.password;
-function gerateCadastrer(firstName,lastname,email,password)
+ import { controllerLogin } from "../controllers/controllerLogin";
+    let _firstName = controllerLogin.firstName;
+    let _lastName = controllerLogin.lastName;
+    let _email = controllerLogin.email;
+    let _pasword = controllerLogin.password;
+function gerateCadastrer (firstName,lastname,email,password)
 {
-    _firstName.stringfy
+    event.preventDefault();
+    console.log(firstName)
+    console.log(lastname)
+    console.log(email)
+    console.log(password)
+    alert('dados salvos com sucesso')
 }
 module.exports = ModelLogin;
