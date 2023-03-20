@@ -7,7 +7,7 @@
     <title>login</title>
 </head>
 <body>
-    <form action="" method="">
+    <form action="" method="" id="form">
         <label for="firstName"> First name:</label>
         <input type="text" name="firstName" id="firstName">
         <label for="lastName"> Last name:</label>
@@ -16,8 +16,9 @@
         <input type="email" name="email" id="email">
         <label for="password">senha:</label>
         <input type="password" name="password" id="password">
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar" onclick="autenticate()">
         <input type="reset" value="Limpar">
+        <a href="index.html">pagina Inicial</a>
     </form>    
      <script src="../js/controllers/controllerLogin.js"></script>
 </body>
