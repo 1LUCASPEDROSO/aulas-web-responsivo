@@ -7,20 +7,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/index.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>   
-    <title>login</title>
+    <title>Cadastrar</title>
 </head>
 <body>
     <div class="container">
-        <form action="" method="" id="form">
+        <form action="" method="" id="form" class="col s12>
+            <label for="firstName"> First name:</label>
+            <input type="text" name="firstName" id="firstName" class="validate">
+            <label for="lastName"> Last name:</label>
+            <input type="text" name="lastName" id="lastName"  class="validate">
             <label for="email">Email:</label>
-            <input type="email" name="email" id="email2"  class="validate">
+            <input type="email" name="email" id="email"  class="validate">
             <label for="password">senha:</label>
-            <input type="password" name="password" id="password2"  class="validate">
-            <input type="submit" value="Enviar" onclick="autenticatelogin()">
+            <input type="password" name="password" id="password"  class="validate">
+            <input type="submit" value="Enviar" onclick="autenticateCadastrer()">
             <input type="reset" value="Limpar">
             <a href="index.html">pagina Inicial</a>
-        </form>  
-    </div>      
-     <script src="./controllerLogin.js"></script>
+        </form>
+    </div>    
+     <script src="./js/controllerLogin.js"></script>
 </body>
 </html>
