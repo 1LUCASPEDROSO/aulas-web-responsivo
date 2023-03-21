@@ -13,9 +13,11 @@ function autenticateCadastrer() {
    }
    else {
       function SaveDataLogin() {
-         data = { 'firstName': firstName, 'lastName': lastName, 'email': email, 'password': password };
+         data = { firstName: firstName, lastName: lastName, email: email, password: password };
          teste = JSON.stringify(data);
-         window.open('./alugar.html')
+         alert(teste);
+         window.open('alugar.html')
+         return teste;
       }
       SaveDataLogin();
    }
@@ -28,10 +30,11 @@ function autenticatelogin() {
       alert('digite seus dados novamente')
    }
    else {
-      for (let i; i < teste.lenght; i++) {
+      alert('passou na verificação de email e senha')
+      for (let i; i < data.lenght; i++) {
          if (emailLogin && senhaLogin == teste.email && teste.password) {
             alert('Login feito com sucesso')
-            window.open('http://127.0.0.1:5500/alugar.html')
+            window.open('alugar.html')
          }
          else {
             alert('dados de login incorretos, tente novamente')
