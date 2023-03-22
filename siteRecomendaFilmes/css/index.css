@@ -16,13 +16,17 @@
     z-index: 1;
     position: fixed;
 }
-.itens-nav {
-    display: flex;
-    float: right;
-}
 .card-title
 {
     font-size: 65px;
+}
+.btn-enviar
+{
+    color: white;
+}
+.container
+{
+    padding: 150px 25px 25px 25px;
 }
 @media screen and (min-width: 600px) {
     .card {

@@ -31,7 +31,7 @@ function autenticatelogin() {
    }
    else {
       alert('passou na verificação de email e senha')
-      for (let i; i < data.lenght; i++) {
+      for (let i; i < teste.lenght; i++) {
          if (emailLogin && senhaLogin == teste.email && teste.password) {
             alert('Login feito com sucesso')
             window.open('alugar.html')

@@ -6,11 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
     <title>Cadastrar</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container-1">
+      <nav class="navbar">
+        <div class="nav-wrapper  #263238 blue-grey darken-4">
+            <a href="index.html" class="brand-logo center">RecomedaFilmes</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="left hide-on-med-and-down">
+              <li><a href="login.html">Login</a></li>
+              <li><a href="cadastrar.html">cadastrar</a></li>
+            </ul>
+          </div>
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
+              <li><a href="login.html">Login</a></li>
+              <li><a href="cadastrar.html">cadastrar</a></li>
+        </ul>
+      </nav>
+        <div class="container">
         <form action="" method="" id="form" class="col s12>
             <label for="firstName"> First name:</label>
             <input type="text" name="firstName" id="firstName" class="validate">
@@ -20,11 +37,12 @@
             <input type="email" name="email" id="email"  class="validate">
             <label for="password">senha:</label>
             <input type="password" name="password" id="password"  class="validate">
-            <input type="submit" value="Enviar" onclick="autenticateCadastrer()">
-            <input type="reset" value="Limpar">
+            <input type="submit" value="Enviar"  class ="waves-effect waves-light btn-large" id="btn-enviar" onclick="autenticateCadastrer()">
+            <input type="reset" value="Limpar" class="waves-effect waves-light btn-large">
             <a href="index.html">pagina Inicial</a>
         </form>
-    </div>    
+    </div>   
      <script src="./js/controllerLogin.js"></script>
+     <script src="./js/index.js"></script>
 </body>
 </html>
