@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+}
+#code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background-color: #eee;
+    margin-bottom: 20px;
+}
+#code div {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #ccc;
+}
+#guess {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    margin-right:
