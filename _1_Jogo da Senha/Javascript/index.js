@@ -13,7 +13,7 @@ for( let x =0; x<cores.length;x++)
 
 function GerarSenha()
 {
-    teste = Math.random(1,2,3,4,5);
+    teste = Math.random(1);
     alert(teste);
 }
 

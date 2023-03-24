@@ -27,7 +27,7 @@ function checkGuess() {
         document.querySelector('btn-8').value,
 ];
 
-    if (guess[0] == code[0] || !/^\d+$/.test(guess)) {
+    if (guess[i] == code[i] || !/^\d+$/.test(guess)) {
         clues = '<span class="primeira posição está correta</span>';
         return;
     }
