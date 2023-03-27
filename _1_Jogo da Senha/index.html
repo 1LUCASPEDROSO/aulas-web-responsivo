@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teste</title>
+    <link rel="stylesheet" href="./Css/main.css">
+    <title>Mastermind</title>
 </head>
 <body>
-    <div class="buttons">
-        <button class="btcor" value="1" id="btn-1" onclick="random_item()">Vermelho</button>
-        <button class="btcor" value="2" id="btn-2"></button>
-        <button class="btcor" value="3" id="btn-3"></button>
-        <button class="btcor" value="4" id="btn-4"></button>
-    </div>
-    <script src="./Javascript/index.js"></script>
+    <div id="game" class="game">
+            <header>
+                <div class="DivTitulo">
+                <h1 class="h1">Jogo da senha</h1>
+                </div>
+            </header>
+        <main></main>
+        <footer>
+            <div id="div_dados">
+                <input type="button" id="btnEnviaCor" class="btnEnviar" value="Enviar">
+            </div>
+        </footer>
+    </div>    
+    <script src="./Js/main.js"></script>
 </body>
 </html>

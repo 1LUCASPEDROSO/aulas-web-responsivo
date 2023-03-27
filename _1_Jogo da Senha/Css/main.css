@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*
+{
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body
+{
+    background-color:rgb(132, 132, 132);
+}
+.game
+{
+    text-align: center;
+    border: 5px solid rgb(255, 0, 0);
+    background-color: black;
+    margin: 10px auto;
+}
+.h1
+{
+    color: red;
+}
+header,footer
+{
+    background-color: rgb(52, 52, 52);
+    padding: 10px;
+}
+main
+{
+    margin: 10px auto;
+}
+.tentativa
+{
+    display: flex;
+    justify-content: space-around;
+}
+.left,.right
+{
+    display: flex;
+}
+.left > div, .right > div
+{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    margin: 5px;
+}
+.SelecionaCor
+{
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+}
+.btnEnviar
+{
+    background-color: red;
+    color: rgb(255, 255, 255);
+    width: 100px;
+    height: 35px;
+    margin: 5px auto;
+    cursor: pointer;
+}
