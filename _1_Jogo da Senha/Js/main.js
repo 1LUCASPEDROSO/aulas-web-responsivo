@@ -4,7 +4,7 @@ const enviar = document.querySelector('.btnEnviar');
 
 let TamanhoSenha = 4;
 let tentativas = 10;
-let cores = ['black','blue','green','red','yellow','pink'];
+let cores = ['blue','green','red','yellow'];
 
 let senha = [];
 let tentativasEnviadas = 1;
@@ -52,8 +52,10 @@ function inicarJogo()
         let opcaoCor = document.createElement('option');
         opcaoCor.setAttribute('style','background-color:'+cor);
         opcaoCor.setAttribute('value',cor);
+
         selecionar.append(opcaoCor);
        }
+       console.log('vetor de cores --> ' +cores)
        selecionar.setAttribute('style','background-color:'+cores[0]);
 
        selecionar.addEventListener('change', (e) =>{
@@ -73,19 +75,20 @@ function CreateRandomCode(){
     console.log(senha);
 }
 enviar.addEventListener('click', (e) => {
-    let inputCores = document.querySelectorAll('.SelecionaCor>option');
+    let inputCores = document.querySelectorAll('.SelecionaCor');
     let arrayInputCores = [];
     for (let v of inputCores) {
         arrayInputCores.push(v.value)
     }
-    console.log(inputCores);
-    Mostrar_ultima_Sequencia('left',arrayInputCores);
+    console.log(arrayInputCores)
+    Mostrar_ultima_Sequencia('left',cores);
 });
-
 function Mostrar_ultima_Sequencia(type, cores) {
-    let tryView = document.querySelectorAll('#try-'+tentativasEnviadas+'>.'+type+'>div');
-    console.log(tryView);
-    tryView.forEach((v, i) => {
+    let tryView = document.querySelectorAll('#tentativa-'+tentativasEnviadas+'>.'+type+'>div');
+    tryView.forEach((v, i) => 
+    {
+        console.log(v.value)
         v.setAttribute('style', 'background-color:'+cores[i]);
+        console.log('teste ->> '+tryView);
     });
 }
