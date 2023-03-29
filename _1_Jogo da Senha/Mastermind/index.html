@@ -21,6 +21,13 @@
             <div></div>
             <div></div>
           </div>
+          function show(type, colors) {
+          let tryView = document.querySelectorAll('#try-'+crackTry+'>.'+type+'>div');
+          console.log(tryView)
+          tryView.forEach((v, i) => {
+        v.setAttribute('style', 'background-color:'+colors[i]);
+    });
+}
           <div id="correction-1" class="right">
             <div></div>
             <div></div>

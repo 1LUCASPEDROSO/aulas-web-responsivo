@@ -4,7 +4,7 @@ const enviar = document.querySelector('.btnEnviar');
 
 let TamanhoSenha = 4;
 let tentativas = 10;
-let cores = ['blue','green','red','yellow'];
+let cores = ['gray','blue','green','red','yellow'];
 
 let senha = [];
 let tentativasEnviadas = 1;
@@ -52,12 +52,9 @@ function inicarJogo()
         let opcaoCor = document.createElement('option');
         opcaoCor.setAttribute('style','background-color:'+cor);
         opcaoCor.setAttribute('value',cor);
-
         selecionar.append(opcaoCor);
        }
-       console.log('vetor de cores --> ' +cores)
        selecionar.setAttribute('style','background-color:'+cores[0]);
-
        selecionar.addEventListener('change', (e) =>{
         e.target.setAttribute('style','background-color:'+e.target.value)
        });
@@ -92,3 +89,14 @@ function Mostrar_ultima_Sequencia(type, cores) {
         console.log('teste ->> '+tryView);
     });
 }
+
+function show(type, colors) {
+    let tryView = document.querySelectorAll('#try-'+crackTry+'>.'+type+'>div');
+    console.log(tryView)
+    tryView.forEach((v, i) => {
+        v.setAttribute('style', 'background-color:'+cores[i]);
+    });
+}
+
+// CALIFORNIA-FB
+// https://fonts.adobe.com/fonts/minion
