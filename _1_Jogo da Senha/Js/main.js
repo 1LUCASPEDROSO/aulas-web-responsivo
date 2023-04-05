@@ -22,7 +22,7 @@ function inicarJogo()
     for (let i = 1; i <= tentativas; i++) { /* for usando o numero de tentativas definodo na Let tentativas para inicializar as divs. de left para cores que o usuario escolheu e right para verificação de cores comparado com o vetor de senha[].*/
     //console.log('chegou no primeiro for')
       let div_tentativa = document.createElement('div'); // variavel criada para criar um elemento 'div'.
-      div_tentativa.setAttribute('id','tentativa'+i); // função para setar atributos na 'div' de tentativa baseado na volta do for. Ex for na volta 10, gera 'tentativa-10'.
+      div_tentativa.setAttribute('id','tentativa-'+i); // função para setar atributos na 'div' de tentativa baseado na volta do for. Ex for na volta 10, gera 'tentativa-10'.
       div_tentativa.setAttribute('class','tentativa')// função para setar atributo class na div 'tentativa' atributo class é usado somente para dar estilização as div criadas.
        let div_left = document.createElement('div'); // variavel criada para criar um elemento 'div'.
        div_left.setAttribute('class','left'); // função para setar atributo class na div 'left' atributo class é usado somente para dar estilização as div criadas.
@@ -77,26 +77,59 @@ enviar.addEventListener('click', (e) => {
     for (let v of inputCores) {
         arrayInputCores.push(v.value)
     }
-    console.log(arrayInputCores)
-    Mostrar_ultima_Sequencia('left',cores);
+    Mostrar_ultima_Sequencia('left',arrayInputCores);
+    arrayCorrecao = criarArrayCorrecao(arrayInputCores);
+    tentativasEnviadas++;
+    checarvitoria(arrayCorrecao);
 });
-function Mostrar_ultima_Sequencia(type, cores) {
+
+function Mostrar_ultima_Sequencia(type,cores) {
     let tryView = document.querySelectorAll('#tentativa-'+tentativasEnviadas+'>.'+type+'>div');
     tryView.forEach((v, i) => 
     {
-        console.log(v.value)
-        v.setAttribute('style', 'background-color:'+cores[i]);
-        console.log('teste ->> '+tryView);
-    });
-}
-
-function show(type, colors) {
-    let tryView = document.querySelectorAll('#try-'+crackTry+'>.'+type+'>div');
-    console.log(tryView)
-    tryView.forEach((v, i) => {
         v.setAttribute('style', 'background-color:'+cores[i]);
     });
 }
+function criarArrayCorrecao(arrayInputCores) {
+    let copia_senha = [...senha];
+    let arrayCorrecao = [];
+    
+    //Richtige Position
+    for (let i in copia_senha) {
+        if (copia_senha[i] == arrayInputCores[i])  {
+            copia_senha[i] = null;
+            arrayInputCores[i] = null;
+            arrayCorrecao.push('red');
+        }
+    }
+    //Falsch Position
+    for (let i in copia_senha) {
+        for (j in arrayInputCores) {
+            if (copia_senha[i] != null && copia_senha[i] == arrayInputCores[j]) {
+                copia_senha[i] = null;
+                arrayInputCores[j] = null;
+                arrayCorrecao.push('white');
+            }
+        }
+    }
+    return arrayCorrecao;
+}
 
+function checarvitoria(arrayCorrecao) {
+    let countCorrecao = 0;
+    for (let v of countCorrecao) {
+        if (v == 'red') {
+            countCorrecao++;
+        }
+    }
+    if (countCorrecao == TamanhoSenha) {
+        alert('você acertou a senha!');
+        inicarJogo();
+    } else if(tentativasEnviadas > tentativas) {
+        alert('voçê não consegiu adivinhar a senha em 10 tentativas!');
+        inicarJogo();
+    }
+}
 // CALIFORNIA-FB
 // https://fonts.adobe.com/fonts/minion
+// cor verde para cor e posição, vemrelho para todas as cores erradas

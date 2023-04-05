@@ -79,7 +79,7 @@ crack_button.addEventListener('click', (e) => {
     for (let v of input_colors) {
         input_colors_arr.push(v.value);
     }
-    console.log(input_colors_arr)
+
     show('left', input_colors_arr);
     correction_Array = createCorrectionArray(input_colors_arr);
     show('right', correction_Array);
@@ -91,9 +91,10 @@ crack_button.addEventListener('click', (e) => {
 
 function show(type, colors) {
     let tryView = document.querySelectorAll('#try-'+crackTry+'>.'+type+'>div');
-    console.log(tryView)
     tryView.forEach((v, i) => {
         v.setAttribute('style', 'background-color:'+colors[i]);
+        console.log(tryView)
+        console.log('cores alimentadas -->'+i)
     });
 }
 
