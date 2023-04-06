@@ -125,9 +125,11 @@ function createCorrectionArray(input_colors_arr) {
 
 function checkWin(correction_Array) {
     let countCorrect = 0;
+    console.log(correction_Array);
     for (let v of correction_Array) {
         if (v == 'red') {
             countCorrect++;
+            console.log(countCorrect)
         }
     }
     if (countCorrect == codeLength) {

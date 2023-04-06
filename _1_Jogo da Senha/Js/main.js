@@ -28,7 +28,6 @@ function inicarJogo()
        div_left.setAttribute('class','left'); // função para setar atributo class na div 'left' atributo class é usado somente para dar estilização as div criadas.
        let div_right = document.createElement('div'); // variavel criada para criar um elemento 'div'.
        div_right.setAttribute('class','right'); // função para setar atributo class na div, 'right' atributo class é usado somente para dar estilização as div criadas.
-
        for (let i = 1; i <= TamanhoSenha; i++) { /*for baseado no tamanho da senha que escolhemos, cada volta é criado uma div_l e div_r nova dentro da div_left e div_right criadas anteriormente.*/
        //console.log('chegou no segundo for')
        //console.log(TamanhoSenha);
@@ -79,8 +78,9 @@ enviar.addEventListener('click', (e) => {
     }
     Mostrar_ultima_Sequencia('left',arrayInputCores);
     arrayCorrecao = criarArrayCorrecao(arrayInputCores);
-    tentativasEnviadas++;
-    checarvitoria(arrayCorrecao);
+    Mostrar_ultima_Sequencia('right',arrayCorrecao);
+    tentativasEnviadas++; 
+    chckWin(arrayCorrecao); 
 });
 
 function Mostrar_ultima_Sequencia(type,cores) {
@@ -94,7 +94,6 @@ function criarArrayCorrecao(arrayInputCores) {
     let copia_senha = [...senha];
     let arrayCorrecao = [];
     
-    //Richtige Position
     for (let i in copia_senha) {
         if (copia_senha[i] == arrayInputCores[i])  {
             copia_senha[i] = null;
@@ -102,32 +101,30 @@ function criarArrayCorrecao(arrayInputCores) {
             arrayCorrecao.push('red');
         }
     }
-    //Falsch Position
     for (let i in copia_senha) {
         for (j in arrayInputCores) {
             if (copia_senha[i] != null && copia_senha[i] == arrayInputCores[j]) {
                 copia_senha[i] = null;
                 arrayInputCores[j] = null;
-                arrayCorrecao.push('white');
+                arrayCorrecao.push('green');
             }
         }
     }
     return arrayCorrecao;
 }
-
-function checarvitoria(arrayCorrecao) {
-    let countCorrecao = 0;
-    for (let v of countCorrecao) {
+function chckWin(arrayCorrecao) {
+    let contador = 0;
+    for (let v of arrayCorrecao) {
         if (v == 'red') {
-            countCorrecao++;
+            contador++;
         }
     }
-    if (countCorrecao == TamanhoSenha) {
+    if (contador == TamanhoSenha) {
         alert('você acertou a senha!');
-        inicarJogo();
+        window.location.reload();
     } else if(tentativasEnviadas > tentativas) {
-        alert('voçê não consegiu adivinhar a senha em 10 tentativas!');
-        inicarJogo();
+        alert('voçê não conseguiu adivinhar a senha em 10 tentativas!');
+        window.location.reload();
     }
 }
 // CALIFORNIA-FB

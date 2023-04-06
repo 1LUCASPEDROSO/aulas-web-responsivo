@@ -49,6 +49,7 @@ main
 }
 .SelecionaCor
 {
+
     border-radius: 50%;
     display: inline-block;
     overflow: hidden;
@@ -64,9 +65,11 @@ main
     margin: 5px auto;
     cursor: pointer;
     font-weight: 600;
+    margin-right: 15px;
 }
-.div_dados
+#div_dados
 {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
 }
