@@ -4,6 +4,7 @@ use db_projetos_somar;
 create table logins (
 id_logins int not null auto_increment primary key,
 nome_user varchar(45) not null,
+cpf_user varchar(11) not null,
 email_user varchar(45) not null,
 senha_user varchar(45) not null
 );
