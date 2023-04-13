@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap');
-.post-it
+.frase
 {
     width: 75%;
     height: 30vh;
@@ -11,15 +11,16 @@
     align-items: center;
     text-align: center;
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-size: 20px;
 }
 .container
 {
-    margin-top: 25%;
+    margin-top: 15%;
     position: relative;
 }
 .frase
 {
-    margin-top: 25%;
     font-family: 'Roboto', sans-serif;
     white-space: normal;
 }
@@ -30,7 +31,7 @@
 }
 input
 {
-    width: 75%;
+    width: 98%;
     height: 4vh;
 }
 body
@@ -39,7 +40,7 @@ body
 }
 
 @media screen and (min-width: 768px) {
-    .post-it
+    .frase
     {
     width: 75%;
     height: 55vh;
@@ -59,9 +60,9 @@ body
 }
 .frase
 {
-    margin-top: 10%;
     font-family: 'Roboto', sans-serif;
     white-space: normal;
+    font-size: 45px;
 }
 .h1
 {
@@ -76,7 +77,7 @@ input
 
   }
   @media screen and (min-width: 1000px) {
-    .post-it
+    .frase
     {
     width: 65%;
     height: 75vh;
@@ -96,7 +97,6 @@ input
 }
 .frase
 {
-    margin-top: 10%;
     font-family: 'Roboto', sans-serif;
     white-space: normal;
 }
