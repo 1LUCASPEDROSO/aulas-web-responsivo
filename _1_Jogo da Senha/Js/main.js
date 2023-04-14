@@ -123,7 +123,7 @@ function chckWin(arrayCorrecao) {
         alert('você acertou a senha!');
         window.location.reload();
     } else if(tentativasEnviadas > tentativas) {
-        alert('voçê não conseguiu adivinhar a senha em 10 tentativas!');
+        alert('você não conseguiu adivinhar a senha em 10 tentativas!');
         window.location.reload();
     }
 }
