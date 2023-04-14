@@ -23,16 +23,19 @@
 {
     font-family: 'Roboto', sans-serif;
     white-space: normal;
+    font-size: 30px;
 }
 .h1
 {
     font-family: 'Roboto', sans-serif;
     color: rgb(0, 0, 0);
+    font-size: 55px;
 }
 input
 {
     width: 98%;
     height: 4vh;
+    font-size: 30px;
 }
 body
 {
@@ -108,8 +111,9 @@ input
 }
 input
 {
-    width: 95%;
+    width: 65%;
     height: 4vh;
+    margin-left: 19%;
 }
 
   }
