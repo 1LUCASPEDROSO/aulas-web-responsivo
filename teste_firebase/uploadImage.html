@@ -55,13 +55,15 @@
         'contactForm').addEventListener('submit', contactForm);
     //uploading file in storage
     function uploadimage() {
-        var type = getInputVal('type');
+        var type = getInputVal('types');
         var storage = firebase.storage();
         var file = document.getElementById("files").files[0];
+        console.log(file);
         var storageref = storage.ref();
         var thisref = storageref.child(type).child(file.name).put(file);
         thisref.on('state_changed', function (snapshot) {
         }, function (error) {
+            alert('teste')
         }, function () {
             // Uploaded completed successfully, now we can get the download URL
             thisref.snapshot.ref.getDownloadURL().then(function (downloadURL) {
