@@ -54,3 +54,32 @@
    const errorMsgElement = document.querySelector('span#errorMsg');
 </script>
 </html>
+//const firebaseConfig = {
+    apiKey: "sua_api_key",
+    authDomain: "seu_auth_domain",
+    projectId: "seu_project_id",
+    storageBucket: "seu_storage_bucket",
+    messagingSenderId: "seu_sender_id",
+    appId: "seu_app_id",
+    measurementId: "seu_measurement_id"
+  };
+  
+  firebase.initializeApp(firebaseConfig);
+  
+  var storage = firebase.storage();
+  
+  function salvarImagem() {
+    const fileInput = document.querySelector('#file');
+    const submit = document.querySelector('#upload');
+    const nameImage = 'image1';
+    const file = fileInput.files;
+    const upload = storage.ref().child(nameImage).put(file);
+    upload.on('state_changed',
+      function () {
+        console.log('upload image successfully');
+      },
+      function (error) {
+        console.log('error to upload image');
+      }
+    );
+  }
