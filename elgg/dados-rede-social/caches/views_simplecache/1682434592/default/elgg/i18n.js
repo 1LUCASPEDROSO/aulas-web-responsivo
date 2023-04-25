@@ -1,0 +1,5 @@
+define("elgg/i18n",['jquery','elgg','sprintf'],function($,elgg,sprintf){return{initLanguage:function(lang){language=lang||elgg.config.current_language;if(typeof elgg.config.translations[language]!=='undefined'){return}
+$.ajax({url:elgg.get_simplecache_url('languages/'+language+'.js'),dataType:'json',async:!1,success:function(translations){elgg.config.translations[language]=translations}})},addTranslation:function(lang,translations){if(typeof elgg.config.translations[lang]==='undefined'){elgg.config.translations[lang]={}}
+$.extend(elgg.config.translations[lang],translations)},echo:function(key,argv,language){if(typeof argv==='string'){language=argv;argv=[]}
+this.initLanguage(language);var translations=elgg.config.translations,dlang=elgg.config.current_language,map;language=language||dlang;argv=argv||[];map=translations[language]||translations[dlang];if(map&&(typeof map[key]==='string')){return sprintf.vsprintf(map[key],argv)}
+return key}}})
